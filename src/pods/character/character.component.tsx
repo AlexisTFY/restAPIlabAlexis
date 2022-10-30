@@ -28,15 +28,17 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
     <p>Species: {character.species}</p>
     <p>Type: {character.type}</p>
     <p>Origin: {character.origin}</p>
-     {/* <Formik
+    <p>bestSentences: {character.bestSentences}</p>
+     <Formik
        onSubmit={onSave}
        initialValues={character}
        enableReinitialize={true}
-       validate={formValidation.validateForm}
+      validate={formValidation.validateForm}
      >
        {() => (
          <Form className={classes.root}>
-           <TextFieldComponent name="name" label="Name" />
+           <TextFieldComponent name="bestSentences" label="bestSentences" />
+           {/* <TextFieldComponent name="name" label="Name" />
            <TextFieldComponent name="gender" label="gender" />
            <RatingComponent name="rating" max={5} />
            <SelectComponent name="city" label="City" items={cities} />
@@ -46,13 +48,13 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
              multiline={true}
              rows={3}
              rowsMax={5}
-           />
+           /> */}
            <Button type="submit" variant="contained" color="primary">
              Save
            </Button>
          </Form>
        )}
-    </Formik> */}
+    </Formik>
     </>
   );
 };

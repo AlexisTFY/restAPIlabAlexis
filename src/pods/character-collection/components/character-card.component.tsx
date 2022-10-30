@@ -38,13 +38,13 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
             style={{ height: 0, paddingTop: '56.25%' }}
           />
           <Typography variant="subtitle1" gutterBottom>
-            Last known l cation: <strong>{character.location}</strong>
+            BestSentences: <strong>{character.bestSentences}</strong>
           </Typography>
         </div>
       </CardContent>
       <CardActions>
         <IconButton onClick={() => onEdit(character.id)}>
-          <Visibility />
+          <EditIcon />
         </IconButton>
         {/* <IconButton onClick={() => onDelete(character.id)}>
           <DeleteIcon />

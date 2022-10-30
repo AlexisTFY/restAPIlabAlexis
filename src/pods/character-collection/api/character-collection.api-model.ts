@@ -24,5 +24,6 @@ export interface CharacterEntityApi {
   origin: CharacterLocation
   location: CharacterLocation
   image: string
-  episode: string[]
+  episode: string[],
+  bestSentences
 }

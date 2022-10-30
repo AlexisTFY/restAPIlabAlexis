@@ -10,7 +10,8 @@ export const mapFromApiToVm = (
   gender: character.gender,
   species: character.species,
   status: character.status,
-  location: character.location.name
+  location: character.location.name,
+  bestSentences: character.bestSentences
   // description: character.shortDescription,
   // rating: character.characterRating,
   // address: character.address1,

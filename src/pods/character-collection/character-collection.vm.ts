@@ -6,6 +6,7 @@ export interface CharacterEntityVm {
   species: string;
   status: string;
   location: string;
+  bestSentences: string
   // description: string;
   // rating: number;
   // address: string;

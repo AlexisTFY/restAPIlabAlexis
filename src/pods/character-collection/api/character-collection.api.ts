@@ -3,12 +3,12 @@ import { Info, CharacterEntityApi } from './character-collection.api-model';
 // import { mockCharacterCollection } from './character-collection.mock-data';
 
 // let characterCollection = [...mockCharacterCollection];
-const url = 'https://rickandmortyapi.com/api/character';
+const url = '/api/characters';
 
-export const getCharacterCollection = async (): Promise<Info<CharacterEntityApi[]>> => {
+export const getCharacterCollection = async (): Promise<CharacterEntityApi[]> => {
   // return characterCollection;
-  const { data } = await Axios.get<Info<CharacterEntityApi[]>>(url);
-  return data.results;
+  const { data } = await Axios.get<CharacterEntityApi[]>(url);
+  return data;
 };
 
 // export const deleteCharacter = async (id: string): Promise<boolean> => {
