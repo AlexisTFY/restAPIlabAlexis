@@ -10,13 +10,14 @@ import Avatar from '@material-ui/core/Avatar/Avatar';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Visibility from '@material-ui/icons/Visibility';
 import { CharacterEntityVm } from '../character-collection.vm';
 import * as classes from './character-card.styles';
 
 interface Props {
   character: CharacterEntityVm;
-  onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
+  onEdit: (id: number) => void;
+  onDelete: (id: number) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
@@ -25,9 +26,9 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
   return (
     <Card>
       <CardHeader
-        avatar={<Avatar aria-label="Character">{character.rating}</Avatar>}
+        avatar={<Avatar style={ character.status === 'Dead' ? { backgroundColor:'red'} : character.status === 'Alive' ? {backgroundColor:'green'} : {backgroundColor:'yellow'} } aria-label="Character" >{character.status.charAt(0)}</Avatar>}
         title={character.name}
-        subheader={character.address}
+        subheader={`${character.status} - ${character.species} - ${character.gender}`}
       />
       <CardContent>
         <div className={classes.content}>
@@ -37,17 +38,17 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
             style={{ height: 0, paddingTop: '56.25%' }}
           />
           <Typography variant="subtitle1" gutterBottom>
-            {character.description}
+            Last known l cation: <strong>{character.location}</strong>
           </Typography>
         </div>
       </CardContent>
       <CardActions>
         <IconButton onClick={() => onEdit(character.id)}>
-          <EditIcon />
+          <Visibility />
         </IconButton>
-        <IconButton onClick={() => onDelete(character.id)}>
+        {/* <IconButton onClick={() => onDelete(character.id)}>
           <DeleteIcon />
-        </IconButton>
+        </IconButton> */}
       </CardActions>
     </Card>
   );

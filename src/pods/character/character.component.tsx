@@ -21,30 +21,38 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   const { character, cities, onSave } = props;
 
   return (
-    <Formik
-      onSubmit={onSave}
-      initialValues={character}
-      enableReinitialize={true}
-      validate={formValidation.validateForm}
-    >
-      {() => (
-        <Form className={classes.root}>
-          <TextFieldComponent name="name" label="Name" />
-          <TextFieldComponent name="address" label="Address" />
-          <RatingComponent name="rating" max={5} />
-          <SelectComponent name="city" label="City" items={cities} />
-          <TextFieldComponent
-            name="description"
-            label="Description"
-            multiline={true}
-            rows={3}
-            rowsMax={5}
-          />
-          <Button type="submit" variant="contained" color="primary">
-            Save
-          </Button>
-        </Form>
-      )}
-    </Formik>
+    <>
+    <img src={character.image} alt="" />
+    <p>Name: {character.name}</p>
+    <p>Gender: {character.gender}</p>
+    <p>Species: {character.species}</p>
+    <p>Type: {character.type}</p>
+    <p>Origin: {character.origin}</p>
+     {/* <Formik
+       onSubmit={onSave}
+       initialValues={character}
+       enableReinitialize={true}
+       validate={formValidation.validateForm}
+     >
+       {() => (
+         <Form className={classes.root}>
+           <TextFieldComponent name="name" label="Name" />
+           <TextFieldComponent name="gender" label="gender" />
+           <RatingComponent name="rating" max={5} />
+           <SelectComponent name="city" label="City" items={cities} />
+           <TextFieldComponent
+             name="description"
+             label="Description"
+             multiline={true}
+             rows={3}
+             rowsMax={5}
+           />
+           <Button type="submit" variant="contained" color="primary">
+             Save
+           </Button>
+         </Form>
+       )}
+    </Formik> */}
+    </>
   );
 };
