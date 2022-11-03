@@ -9,6 +9,8 @@ export const CharacterCollectionContainer = () => {
   const { characterCollection, loadCharacterCollection } = useCharacterCollection();
   const history = useHistory();
 
+  console.log('characterCollection', characterCollection);
+
   React.useEffect(() => {
     loadCharacterCollection();
   }, []);
