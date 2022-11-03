@@ -7,6 +7,7 @@ import { NewPageContext, FilterContext } from'./character-collection.context';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
+import { Link, generatePath } from 'react-router-dom';
 
 interface Props {
   characterCollection: CharacterEntityVm[];
@@ -34,21 +35,29 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
 
   return (
     <div className={classes.root}>
-      <Paper component="form" style={{ padding: '2px 4px', display: 'flex', alignItems: 'center', width: 400, background: "#f5f5f5", boxShadow: "none" }}>
+
+      <Link to={generatePath("/episodes")} style={{ textDecoration: "none", marginRight: '10px' }}>
+        <Button variant="contained" color="primary">
+          Lista de Episodios
+        </Button>
+      </Link>
+
+      <Link to={generatePath("/locations")} style={{ textDecoration: "none" }}>
+        <Button variant="contained" color="primary">
+          Lista de Localizaciones
+        </Button>
+      </Link>
+
+      <Paper component="form" style={{marginTop:'15px', padding: '2px 4px', display: 'flex', alignItems: 'center', width: 400, background: "#f5f5f5", boxShadow: "none" }}>
         <InputBase
           style={{ marginLeft: 1, flex: 1 }}
           placeholder="Filtra entre los personajes ..."
           onChange={e => {
-            console.log(e.target.value)
             setFilter(e.target.value)
           }}
         />
           <SearchIcon />
       </Paper>
-
-      <Button variant="contained" color="primary" onClick={onCreateCharacter}>
-        Add character
-      </Button>
 
       <ul className={classes.list}>
         {characterCollection.map((character) => (

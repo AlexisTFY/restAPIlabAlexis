@@ -16,6 +16,5 @@ export const getEpisodes = async (): Promise<EpisodesEntityApi[]> => {
     }
   `;
   const { episodes } = await graphQLClient.request(query);
-  console.log('API', episodes);
   return episodes;
 };

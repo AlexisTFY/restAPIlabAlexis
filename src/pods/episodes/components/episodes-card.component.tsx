@@ -16,10 +16,11 @@ export const EpisodesCard: React.FunctionComponent<Props> = (props) => {
     <Card>
       <CardHeader
         title={episodes.name}
-        subheader={`${episodes.episode} - ${episodes.created} `}
       />
       <CardContent>
         <div className={classes.content}>
+          <p>episode: {episodes.episode}</p>
+          <p>Created: {episodes.created}</p>
         </div>
       </CardContent>
     </Card>

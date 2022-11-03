@@ -16,10 +16,11 @@ export const LocationsCard: React.FunctionComponent<Props> = (props) => {
     <Card>
       <CardHeader
         title={locations.name}
-        subheader={`${locations.type} - ${locations.dimension} `}
       />
       <CardContent>
         <div className={classes.content}>
+          <p>Type: {locations.type}</p>
+          <p>Locations {locations.dimension}</p>
         </div>
       </CardContent>
     </Card>

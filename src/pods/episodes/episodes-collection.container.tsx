@@ -5,8 +5,6 @@ import { CharacterCollectionComponent } from './episodes-collection.component';
 export const EpisodesCollectionContainer = () => {
   const { episodesCollection, loadEpisodesCollection } = useEpisodesCollection();
 
-  console.log('episodesCollection', episodesCollection);
-
   React.useEffect(() => {
     loadEpisodesCollection();
   }, []);
